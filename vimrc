@@ -1,4 +1,5 @@
-set runtimepath+=~\vimfiles\bundle\vim-fugitive
+" Get the expected select using mouse and clipboard cut/copy/paste behavior 
+:behave mswin
 
 set ch=2    " Make command line two lines high
 
@@ -30,6 +31,7 @@ set number
 
 set title
 
+" Show current position
 set ruler
 
 "Convert all tabs to spaces
@@ -47,26 +49,6 @@ set backspace=indent,eol,start
 " always set autoindenting on
 set ai 
 
-" For Win32 version, have "K" lookup the keyword in a help file
-"if has("win32")
-"  let winhelpfile='windows.hlp'
-"  map K :execute "!start winhlp32 -k <cword> " . winhelpfile <CR>
-"endif
-
-" Set nice colors
-" background for normal text is light grey
-" Text below the last line is darker grey
-" Cursor is green, Cyan when ":lmap" mappings are active
-" Constants are not underlined but have a slightly lighter background
-" highlight Normal guibg=black
-" highlight Normal guifg=white
-" highlight Cursor guibg=Green guifg=NONE
-" highlight lCursor guibg=Cyan guifg=NONE
-" highlight NonText guibg=grey30
-"highlight Constant gui=NONE guibg=grey95
-"highlight Special gui=NONE guibg=grey95
-
-
 set backup
 set backupdir=$TEMP
 set noswapfile
@@ -76,22 +58,12 @@ set autoindent
 set showmatch " show matching brackets
 set hlsearch " Switch on search pattern highlighting.
 
-" set tags+=C:\repos\ProjectServices\tags
-" set tags+=C:\repos\VS\src\vsproject\tags
 set tags=tags;/
 set tagstack
 
-" make up and down work correctly
-imap <silent> <Down> <C-o>gj
-imap <silent> <Up> <C-o>gk
-nmap <silent> <Down> gj
-nmap <silent> <Up> gk
-
 map <F2> :w<CR>
-map <F3> :e $HOME\_vimrc<CR>
+map <F3> :e $HOME\vimfiles\vimrc<CR>
 map <F12> :q<CR>
-
-imap ` <Esc>bve<C-C>ve<Esc>a
 
 " always enable Vim tabs
 set showtabline=2
@@ -118,11 +90,6 @@ imap <C-v> <C-o>"+gP
 " Select all
 map <C-a> ggVG
 imap <C-a> <C-o>ggVG
-
-" When _gvimrc file is sourced twice, the autocommands will appear twice.
-" To avoid this remove ALL autocommands for the current group before adding
-" them.
-"autocmd!
 
 " Move to the directory of the file that is opened.
 autocmd BufEnter * cd %:p:h
