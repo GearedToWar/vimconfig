@@ -1,0 +1,9 @@
+[submodule "pack\\bundle\\start\\tagbar"]
+	path = pack\\bundle\\start\\tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "pack\\bundle\\start\\vim-fugitive"]
+	path = pack\\bundle\\start\\vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "pack\\bundle\\start\\ack"]
+	path = pack\\bundle\\start\\ack
+	url = https://github.com/mileszs/ack.vim
